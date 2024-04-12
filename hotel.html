@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Hotel</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Roboto+Flex:opsz,wght@8..144,300&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./style.css"/>
+
+</head>
+<body>
+    <nav class="fixed-navigation">
+        <img class="logo" src="./Assets/logo.svg"/>
+        <ul class="nav-links">
+            <li><a class="nav-link" href="index.html">Home</a></li>
+            <li><a class="nav-link" href="browse.html">Find offers</a></li>
+            <li><a class="nav-link" href="#">Add new offers</a></li>
+            <li><a class="nav-link" href="#">My offers</a></li>
+            <li><a class="nav-link" href="#">Favorites</a></li>
+            <a class="button primary" href="index.html">Log out</a>
+        </ul>
+        <button class="button primary hidden">Menu</button>
+    </nav>
+   
+    <section id = "title" class="title">
+        <p class="title-middle">Hotel Name</p>
+    </section>
+
+    <section id = "hotel-page" class="hotel-page">
+        <div id = "imgbox" class = "hotel-page-imgbox">
+            <img class="hotel-page-img"src = ./Assets/cards1.jpg>
+            <p class="chip">Add to favorites</p>
+        </div>
+        <div id = "Subpage" class="hotel-page-info"> 
+            <div id = "Details">
+            <p><b>Location:</b> Madrid</p>
+            <p><b>Local Category:</b> ★★★★★</p>
+            <p><b>Price:</b> 70$/room/night</p>
+            <p><b>Descritption:</b></p>
+            </div>
+            <br>
+            <div id = "Description"></div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum excepturi molestiae aspernatur, qui eos maxime inventore aliquam, ratione voluptates animi labore placeat nihil sequi esse sint culpa provident nemo magni?
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. In, corporis eius est velit animi repellendus sint veniam nam pariatur facilis quos quidem tempore nobis quasi id saepe mollitia neque laborum.
+            </p>
+            <br>
+            <button onclick="document.getElementById('contact-modal').style.display='block'" class="button primary hotel-page-contact">Contact us ✉</button>
+
+            <div id = "Hotel Imagebox" class = hotel-page-info-imgbox>
+                <img class="hotel-page-info-img"src = ./Assets/cards1.jpg>
+                <img class="hotel-page-info-img"src = ./Assets/cards1.jpg>
+            </div>
+        </div>
+    </section>
+
+    <div id="contact-modal" class="modal">
+        <div class="modal-content">
+            <div id = "modal-toprow" class = "modal-toprow">
+                <p class = "title-middle">Contact</p>
+                <button onclick="document.getElementById('contact-modal').style.display='none'"
+                class="button text-middle"> X </button>
+            </div>
+            <p>You are contacting the [hotel name] hotel</p>
+            <br>
+            <textarea class="modal-textbox" id="modal-form" rows="10" cols="50"> </textarea>
+            <div id = "modal-action-buttons" class = "modal-action-buttons">
+                <button class = "button" onclick="document.getElementById('contact-modal').style.display='none'">Cancel</button>
+                <button class = "button" onclick="document.getElementById('contact-modal').style.display='none'">Confirm</button>
+            </div>
+        </div>
+      </div>
+
+</body>
+</html>
