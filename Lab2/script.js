@@ -61,20 +61,30 @@ const removeme = (self) => {
 }
 
 const searchbox = () => {
+    const checkbox = document.getElementById("caseSensitiveCheck");
     const value = document.getElementById("searchboxInput").value;
     
     const table = document.getElementById("todo-list");
-
     var child=table.firstChild.nextSibling;
 
     while (child !== null){
-
-        if(child.firstChild.firstChild.innerHTML.includes(value)){
-            child.firstChild.classList.remove("d-none");
+        if (checkbox.checked){
+            if(child.firstChild.firstChild.innerHTML.toLowerCase().includes(value.toLowerCase())){
+                child.firstChild.classList.remove("d-none");
+            }
+            else{
+                child.firstChild.classList.add("d-none");
+            }
         }
         else{
-            child.firstChild.classList.add("d-none");
+            if(child.firstChild.firstChild.innerHTML.includes(value)){
+                child.firstChild.classList.remove("d-none");
+            }
+            else{
+                child.firstChild.classList.add("d-none");
+            }
         }
+
 
         child = child.nextSibling;
     }

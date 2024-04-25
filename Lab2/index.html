@@ -14,7 +14,7 @@
         <label for="todo-input">TODO:</label>
     </div>
 
-    <button type="button" class="btn btn-primary position-relative start-50" onclick="adder()">Add</button>
+    <button type="button" class="btn btn-primary position-relative start-50 translate-middle-x" onclick="adder()">Add</button>
 
     <br />
     <br />
@@ -37,7 +37,14 @@
 
 <div id="searchbox" class="form-floating m-5">
     <input type="text" placeholder="TODO:" class="form-control" id="searchboxInput" onkeyup="searchbox()"/>
-    <label for="todo-input">Search</label>
+    <label for="searchboxInput">Search</label>
+</div>
+
+<div class="form-check position-absolute start-50 translate-middle">
+    <input class="form-check-input" type="checkbox" value="" id="caseSensitiveCheck">
+    <label class="form-check-label" for="caseSensitiveCheck">
+      Case insensitive
+    </label>
 </div>
 
 
