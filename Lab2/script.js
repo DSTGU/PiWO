@@ -2,7 +2,7 @@
 
 const createDiv = (inputText) => {
     //const listItem = document.createElement("li");
-    const dziw = document.createElement("div")
+    const dziw = document.createElement("div");
     //listItem.innerText = input.value;
     dziw.innerHTML = '<li class = "list-group-item"><p>' + inputText +'</p><p></p><button type="button" class="btn btn-danger position-absolute end-0 scale-50 translate-middle-y" onclick="removeme(this)">X</button></li>'
     // Assign an onclick event handler directly
@@ -39,6 +39,16 @@ const adder = () => {
     }
 
     const dziw = createDiv(input.value);
+
+    const theList = document.getElementById("todo-list");
+    theList.append(dziw);
+}
+
+const recycleTrash = () => {
+    const trash = document.getElementById("trashContent");
+    const dziw = document.createElement("div");
+    dziw.innerHTML = trash.innerHTML;
+    trash.innerHTML = "";
 
     const theList = document.getElementById("todo-list");
     theList.append(dziw);
@@ -98,7 +108,15 @@ window.onload = () => {
         
         const val = document.getElementById("elementToRemID").innerHTML;
         const elemtorem = document.getElementById(val);
-        elemtorem.remove();
+        const trash = document.getElementById("trashContent");
+        trash.innerHTML = elemtorem.innerHTML;
+        
+        if (elemtorem.parentNode.id === "todo-list"){
+            elemtorem.remove();
+        } else if(elemtorem.parentNode.id === "trashBin"){
+            elemtorem.innerHTML = "";
+        }
+        
         const modal = document.getElementById("potwierdzenie");
         modal.close();
 
