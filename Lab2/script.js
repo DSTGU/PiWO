@@ -48,10 +48,31 @@ const adder = () => {
 
 const removeme = (self) => {
 
-    const modal = document.getElementById("Potwierdzenie");
+    const modal = document.getElementById("potwierdzenie");
+    const modalzadanie = document.getElementById("modalzadanie");
+    modalzadanie.innerText = self.parentNode.parentNode.innerText;
     modal.showModal();
+    //self.parentNode.parentNode.remove();
+}
 
-    console.log(self.innerHTML);
-    console.log(self.outerHTML);
-    self.parentNode.parentNode.remove();
+
+window.onload = () => {
+
+    const closingButton = document.getElementById("closing");
+    closingButton.addEventListener("click", () =>{
+        
+        const modal = document.getElementById("potwierdzenie");
+        modal.close();
+
+
+    });
+
+    const quo = document.getElementById("quo");
+    quo.addEventListener("click", () =>{
+
+        const modal = document.getElementById("potwierdzenie");
+        modal.close();
+
+    });
+
 }
